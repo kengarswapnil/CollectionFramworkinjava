@@ -1,0 +1,21 @@
+class MyThread  extends Thread{
+    public void run (){
+        System.out.println("Thread is runing......");
+    }
+}
+
+class MySecondThread implements Runnable {
+    public void run(){
+        System.out.println("Thread is runable.....");
+    }
+}
+class Main {
+    public static void main(String[] args) {
+        // MyThread t = new MyThread();
+        // t.start();
+        
+        MySecondThread m = new MySecondThread();
+          Thread t2 = new Thread(m);
+          t2.start();
+    }
+}
