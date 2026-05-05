@@ -1,0 +1,115 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+        // ================= LIST (ArrayList) =================
+        ArrayList<String> list = new ArrayList<>();
+
+        // add
+        list.add("Java");
+        list.add("Python");
+        list.add("C++");
+        list.add("Java");
+
+        // add at index
+        list.add(1, "JavaScript");
+
+        // get
+        System.out.println("Get: " + list.get(0));
+
+        // set
+        list.set(2, "Go");
+
+        // remove
+        list.remove("Java");
+        list.remove(0);
+
+        // contains
+        System.out.println("Contains Python: " + list.contains("Python"));
+
+        // indexOf
+        System.out.println("Index of Go: " + list.indexOf("Go"));
+
+        // size
+        System.out.println("List Size: " + list.size());
+
+        // loop
+        System.out.println("List Elements:");
+        for(String s : list){
+            System.out.println(s);
+        }
+
+        // ================= SET (HashSet) =================
+        HashSet<String> set = new HashSet<>();
+
+        // add
+        set.add("Java");
+        set.add("Python");
+        set.add("Java"); // duplicate
+
+        // remove
+        set.remove("Python");
+
+        // contains
+        System.out.println("Set contains Java: " + set.contains("Java"));
+
+        // size
+        System.out.println("Set Size: " + set.size());
+
+        // loop
+        System.out.println("Set Elements:");
+        for(String s : set){
+            System.out.println(s);
+        }
+
+        // ================= TREESET =================
+        TreeSet<Integer> treeSet = new TreeSet<>();
+        treeSet.add(30);
+        treeSet.add(10);
+        treeSet.add(20);
+
+        System.out.println("First: " + treeSet.first());
+        System.out.println("Last: " + treeSet.last());
+        System.out.println("Higher than 10: " + treeSet.higher(10));
+        System.out.println("Lower than 20: " + treeSet.lower(20));
+
+        // ================= MAP (HashMap) =================
+        HashMap<Integer, String> map = new HashMap<>();
+
+        // put
+        map.put(1, "Java");
+        map.put(2, "Python");
+        map.put(3, "C++");
+
+        // get
+        System.out.println("Get key 1: " + map.get(1));
+
+        // remove
+        map.remove(2);
+
+        // contains
+        System.out.println("Contains key 1: " + map.containsKey(1));
+        System.out.println("Contains value Java: " + map.containsValue("Java"));
+
+        // size
+        System.out.println("Map Size: " + map.size());
+
+        // loop
+        System.out.println("Map Elements:");
+        for(Map.Entry<Integer, String> e : map.entrySet()){
+            System.out.println(e.getKey() + " -> " + e.getValue());
+        }
+
+        // ================= TREEMAP =================
+        TreeMap<Integer, String> treeMap = new TreeMap<>();
+        treeMap.put(3, "C");
+        treeMap.put(1, "Java");
+        treeMap.put(2, "Python");
+
+        System.out.println("First Key: " + treeMap.firstKey());
+        System.out.println("Last Key: " + treeMap.lastKey());
+        System.out.println("Higher Key of 1: " + treeMap.higherKey(1));
+        System.out.println("Lower Key of 2: " + treeMap.lowerKey(2));
+    }
+}
